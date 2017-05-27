@@ -1,4 +1,5 @@
 Background bg;
+Mouselight light;
 
 int s = 10;
 
@@ -8,8 +9,10 @@ void setup() {
   noStroke();
   noCursor();
   bg = new Background(s);
+  light = new Mouselight(s);
 }
 
 void draw() {
   bg.display();
+  light.display();
 }
