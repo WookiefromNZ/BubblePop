@@ -4,7 +4,7 @@ class Bubble {
   float d;
   float r;
   boolean Up;
-  
+
   Bubble(float tempD) {
     loc = new PVector(random(r, width - r), height + r);
     vel = new PVector();
@@ -14,11 +14,11 @@ class Bubble {
   }
 
   void motion() {      
-    vel = new PVector(random(-3,3), random(-10,0));
+    vel = new PVector(random(-3, 3), random(-10, 0));
     if (Up == false) {
       vel.y = vel.y * -1;
     }
-    loc.add(vel);  
+    loc.add(vel);
   }
 
   void direction() {
@@ -40,10 +40,10 @@ class Bubble {
 
   void check() {
     // Check mouse pointer is in bubble then pop.
-    if (dist(mouse.x, mouse.y, loc.x, loc.y) <= r) {
+    if (dist(mouseX, mouseY, loc.x, loc.y) <= r) {
       pop();
       tallyPopped = tallyPopped + 1;
-       if (bubble.size() > total) {
+      if (bubble.size() > total) {
         bubble.remove(this);
       }
     }
